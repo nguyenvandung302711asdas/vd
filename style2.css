@@ -23,6 +23,8 @@ a {
     color: black;
     font-size: 17px;
     padding-bottom: 25px;  
+    border:1px solid red;
+    
    
 }
 
@@ -92,6 +94,7 @@ nav ul li.search-container i {
     align-items: center;
     transform: translateX(-30%); /* Căn chỉnh ngang */
     margin-top: 25px;
+    
 }
 
 .dropdown-content .row {

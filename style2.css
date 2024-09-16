@@ -1,3 +1,4 @@
+/* Reset margin, padding, and box-sizing for consistency */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Nav styles */
 nav {
     background-color: rgb(255, 255, 255);
 }
@@ -14,47 +16,42 @@ nav ul {
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    width: 100%;    
+    width: 100%;
     list-style: none;
 }
 
+/* Remove default link styling and adjust text color and padding */
 a {
     text-decoration: none;
     color: black;
     font-size: 17px;
-    padding-bottom: 25px;  
-
-    
-   
+    padding-bottom: 25px;
 }
 
+/* Style for active links or hover effect */
 .tieude {
-    border-bottom: 1px solid transparent; /* Đặt border-bottom mặc định là transparent */
-    transition: border-bottom 0.3s; /* Thêm hiệu ứng chuyển tiếp cho border-bottom */
+    border-bottom: 1px solid transparent; /* Default border-bottom */
+    transition: border-bottom 0.3s; /* Smooth transition for border-bottom */
 }
 
-.tieude:hover {     
-    border-bottom: 1px solid red; /* Đổi màu border-bottom khi di chuột qua */
+.tieude:hover {
+    border-bottom: 1px solid red; /* Border color on hover */
 }
 
-
+/* Container styles to align with Bootstrap's container class */
 .Container {
     max-width: 1150px;
     margin: auto;
 }
 
-
-
-
+/* Adjust icon positioning and search input styling */
 nav ul li i {
     margin-left: 5px;
 }
 
 nav ul li.search-container {
     position: relative;
-  
 }
-
 
 nav ul li.search-container input {
     border: 1px solid black;
@@ -71,7 +68,7 @@ nav ul li.search-container i {
     right: 10px;
 }
 
-
+/* Dropdown styles */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -82,19 +79,16 @@ nav ul li.search-container i {
 }
 
 .dropdown-content {
-   
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 800px;
     left: 0;
-    top: 100%; /* Đảm bảo dropdown nằm dưới thanh menu */
-    z-index: 1; /* Hiển thị dropdown lên trên các phần tử khác */
+    top: 100%;
+    z-index: 1;
     font-family: Arial, Helvetica, sans-serif;
-    align-items: center;
-    transform: translateX(-30%); /* Căn chỉnh ngang */
+    transform: translateX(-30%); /* Align dropdown */
     margin-top: 25px;
-    
 }
 
 .dropdown-content .row {
@@ -118,6 +112,7 @@ nav ul li.search-container i {
     background-color: #ddd;
 }
 
+/* Responsive adjustments for dropdown columns */
 @media screen and (max-width: 600px) {
     .dropdown-content .column {
         width: 100%;

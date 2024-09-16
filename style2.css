@@ -1,120 +1,168 @@
 /* Reset margin, padding, and box-sizing for consistency */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255, 255, 255);
 }
 
 /* Nav styles */
 nav {
-    background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    width: 100%;
-    list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  list-style: none;
 }
 
 /* Remove default link styling and adjust text color and padding */
 a {
-    text-decoration: none;
-    color: black;
-    font-size: 17px;
-    padding-bottom: 25px;
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  padding-bottom: 25px;
 }
 
 /* Style for active links or hover effect */
 .tieude {
-    border-bottom: 1px solid transparent; /* Default border-bottom */
-    transition: border-bottom 0.3s; /* Smooth transition for border-bottom */
+  border-bottom: 1px solid transparent; /* Default border-bottom */
+  transition: border-bottom 0.3s; /* Smooth transition for border-bottom */
 }
 
 .tieude:hover {
-    border-bottom: 1px solid red; /* Border color on hover */
+  border-bottom: 1px solid red; /* Border color on hover */
 }
 
 /* Container styles to align with Bootstrap's container class */
 .Container {
-    max-width: 1150px;
-    margin: auto;
+  max-width: 1150px;
+  margin: auto;
 }
 
 /* Adjust icon positioning and search input styling */
 nav ul li i {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 nav ul li.search-container {
-    position: relative;
+  position: relative;
 }
 
 nav ul li.search-container input {
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 30px;
-    outline: none;
-    padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 30px;
+  outline: none;
+  padding: 5px 10px;
 }
 
 nav ul li.search-container i {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
 }
 
 /* Dropdown styles */
 .dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 800px;
-    left: 0;
-    top: 100%;
-    z-index: 1;
-    font-family: Arial, Helvetica, sans-serif;
-    transform: translateX(-30%); /* Align dropdown */
-    margin-top: 25px;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 800px;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  transform: translateX(-30%); /* Align dropdown */
+  margin-top: 25px;
 }
 
 .dropdown-content .row {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .dropdown-content .column {
-    width: 20%;
-    padding: 10px;
-    background-color: #ebe6e6;
+  width: 20%;
+  padding: 10px;
+  background-color: #ebe6e6;
 }
 
 .dropdown-content .column a {
-    display: block;
-    color: black;
-    padding: 10px;
+  display: block;
+  color: black;
+  padding: 10px;
 }
 
 .dropdown-content .column a:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 /* Responsive adjustments for dropdown columns */
 @media screen and (max-width: 600px) {
-    .dropdown-content .column {
-        width: 100%;
-    }
+  .dropdown-content .column {
+    width: 100%;
+  }
+}
+.gunaocungco {
+  font-family: "Playfair Display", serif;
+  color: rgb(203, 180, 158);
+  text-align: center;
+  font-size: 50px;
+  width: auto;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+
+.body-anh img {
+  height: 320px;
+  width: auto;
+  margin-right: 30px;
+}
+
+.anh1,
+.anh3 {
+  margin-top: 80px;
+}
+
+.anh1 {
+  margin-left: 10px;
+}
+
+.anh2 {
+  margin-left: 200px;
+}
+
+.anh3 {
+  margin-left: 150px;
+}
+
+.caption {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
 }

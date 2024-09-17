@@ -26,22 +26,23 @@ a {
   text-decoration: none;
   color: black;
   font-size: 17px;
-  padding-bottom: 25px;
+  padding-bottom: 40px;
+  padding-left: 5px;
 }
 
 /* Style for active links or hover effect */
 .tieude {
-  border-bottom: 1px solid transparent; /* Default border-bottom */
-  transition: border-bottom 0.3s; /* Smooth transition for border-bottom */
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s;
 }
 
 .tieude:hover {
-  border-bottom: 1px solid red; /* Border color on hover */
+  border-bottom: 1px solid red;
 }
 
-/* Container styles to align with Bootstrap's container class */
+/* Container styles */
 .Container {
-  max-width: 1150px;
+  max-width: 1100px;
   margin: auto;
 }
 
@@ -87,8 +88,7 @@ nav ul li.search-container i {
   left: 0;
   top: 100%;
   z-index: 1;
-  font-family: Arial, Helvetica, sans-serif;
-  transform: translateX(-30%); /* Align dropdown */
+  transform: translateX(-30%);
   margin-top: 25px;
 }
 
@@ -120,38 +120,27 @@ nav ul li.search-container i {
   }
 }
 
-/*GU NAO CUNG CO*/
+/* GU NAO CUNG CO */
 .gunaocungco {
   font-family: "Playfair Display", serif;
   color: rgb(203, 180, 158);
   text-align: center;
-  font-size: 50px;
-  width: auto;
-  margin-top: 10px;
-  margin-left: 50px;
+  font-size: 45px;
+  margin: 50px 30px;
+  width: 100%;
+}
+
+.body-anh {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .body-anh img {
-  height: 320px;
+  height: 300px;
   width: auto;
-  margin-right: 30px;
-}
-
-.anh1,
-.anh3 {
-  margin-top: 80px;
-}
-
-.anh1 {
-  margin-left: 10px;
-}
-
-.anh2 {
-  margin-left: 200px;
-}
-
-.anh3 {
-  margin-left: 150px;
 }
 
 .caption {
@@ -168,9 +157,27 @@ nav ul li.search-container i {
   justify-content: center;
 }
 
-/*GMT*/
+.anh1,
+.anh3 {
+  margin-top: 50px;
+  margin: 50px; /* Adjust this value to control the distance */
+}
+
+.anh2 {
+  margin-top: 0; /* Keep image 2 at the default position */
+}
+
+/* GMT Section */
 .anhtext {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.anhgmt img {
+  max-width: 100%;
+  height: auto;
 }
 
 .textgmt {
@@ -178,15 +185,21 @@ nav ul li.search-container i {
   font-size: 45px;
   padding: 20px;
   margin-top: 20px;
+  max-width: 600px;
 }
 
-/*ve dep cua su tinh te*/
-.vedep{
+/* VE DEP CUA SU TINH TE */
+.vedep {
   font-family: "Playfair Display", serif;
   color: rgb(203, 180, 158);
   text-align: center;
-  font-size: 50px;
-  width: auto;
-  margin-top: 10px;
-  margin-left: 50px;
+  font-size: 45px;
+  margin: 50px auto;
+  width: 100%;
+}
+
+/*<!--Phien ban luxxury--> */
+.text-center {
+  font-family: "HarmoniaSemiLight";
+  font: 35px;
 }

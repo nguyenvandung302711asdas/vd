@@ -28,8 +28,8 @@ nav ul {
 a {
   text-decoration: none;
   color: black;
-  font-size: 17px;
-  padding-bottom: 42px;
+  font-size: 18px;
+  padding-bottom: 40px;
   margin-top: 10px;
 }
 
@@ -40,7 +40,7 @@ a {
 }
 
 .tieude:hover {
-  border-bottom: 1px solid red;
+  border-bottom: 10px solid red;
 }
 
 /* Container styles */
@@ -104,7 +104,7 @@ nav ul li.search-container i {
 .dropdown-content .column {
   width: 20%;
   padding: 10px;
-  background-color: #ebe6e6;
+  background-color: #ffffff;
 }
 
 .dropdown-content .column a {
@@ -114,7 +114,8 @@ nav ul li.search-container i {
 }
 
 .dropdown-content .column a:hover {
-  background-color: #ddd;
+  background-color: #f4efef;
+  border-radius: 10px;
 }
 
 /* Responsive adjustments for dropdown columns */
@@ -130,10 +131,21 @@ nav ul li.search-container i {
   color: rgb(203, 180, 158);
   text-align: center;
   font-size: 45px;
-  margin: 50px 30px;
+  margin-top: 0px; /* Điều chỉnh giá trị âm để đẩy văn bản lên trên */
   width: 100%;
 }
+.body-anh div {
+  opacity: 0; /* Bắt đầu với độ mờ 0 để ẩn phần tử */
+  transform: translateY(
+    100px
+  ); /* Di chuyển phần tử xuống để tạo hiệu ứng xuất hiện */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
+}
 
+.body-anh div.show {
+  opacity: 1; /* Hiển thị phần tử */
+  transform: translateX(0); /* Di chuyển phần tử về vị trí ban đầu */
+}
 .body-anh {
   display: flex;
   justify-content: center;
@@ -203,17 +215,15 @@ nav ul li.search-container i {
 
 /*<!--Phien ban luxxury--> */
 .text-center {
-  font-family: "HarmoniaSemiLight";
+  font-style: italic;
   font: 35px;
 }
 /*-----------Slider----------*/
 .slider-product-one-content {
-  background-color: rgb(255, 255, 0);
+  background-color: rgb(255, 255, 255);
   padding: 12px;
 }
-.slider-product-one-content-title {
-  font-style: italic;
-}
+
 .slider-product-one-content-items {
   display: flex;
   justify-content: space-evenly;
@@ -221,7 +231,7 @@ nav ul li.search-container i {
 
 .slider-product-one-content-item {
   width: 19%;
-  background-color: #ddd;
+  background-color: #ffffff;
   padding: 50px 12px 50px;
   border-radius: 5px;
   cursor: pointer;
@@ -234,16 +244,98 @@ nav ul li.search-container i {
   transform: translateY(-20px);
 }
 .slider-product-one-content-text {
-  padding-top: 20px;
+  padding: 20px;
+  text-align: center;
   list-style: none;
 }
 .slider-product-one-content-text li {
   margin-bottom: 6px;
 }
+
+.slider-product-one-content-text li:nth-child(1):hover {
+  color: #fb6e2e;
+}
+
+.slider-product-one-content-text li:nth-child(4) {
+  font-weight: bold;
+}
+
 .slider-product-one-content-text li:nth-child(3) a {
   text-decoration: line-through;
+  color: black;
 }
 
 .slider-product-one-content-text li:last-child {
   color: #fb6e2e;
+}
+
+/*---------- slider product -- nut chuyen slide -----------*/
+.slider-product-one-content-container {
+  position: relative;
+  overflow: hidden;
+}
+.slider-product-one-content-btn {
+  position: absolute;
+  top: 60%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  height: 20px;
+}
+/*nut*/
+.slider-product-one-content-btn i {
+  color: #020202;
+  font-size: 30px;
+  height: 45px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0.5; /*lam mờ*/
+}
+.slider-product-one-content-btn i:hover {
+  opacity: 0.5;
+}
+
+/*chuyen slide*/
+.slider-product-one-content-items-content {
+  position: relative;
+  height: 500px;
+  transition: all 0.8s ease;
+}
+.slider-product-one-content-items {
+  position: absolute;
+}
+.slider-product-one-content-items:nth-child(2) {
+  transform: translateX(100%);
+}
+/*Nhan hang*/
+.nhan-hang {
+  width: 100%;
+  height: 100px;
+  display: flex; /* Sử dụng flexbox để căn giữa */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  overflow: hidden; /* Đảm bảo ảnh không vượt ra ngoài */
+}
+
+.nhan-hang img {
+  margin: 30px 30px; /* Điều chỉnh khoảng cách giữa các ảnh */
+  width: auto;
+  padding: 10px;
+  transform: translateY(10px); /* Di chuyển ảnh xuống 10px */
+  transition: transform 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng chuyển tiếp */
+}
+
+/* Tạo hiệu ứng bóng ảnh khi rê chuột vào */
+.nhan-hang img:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Tạo bóng khi rê chuột vào */
+  transform: translateY(
+    5px
+  ); /* Di chuyển ảnh lên một chút để tăng hiệu ứng 3D */
+  border-radius: 10px;
 }

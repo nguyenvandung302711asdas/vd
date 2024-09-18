@@ -26,8 +26,8 @@ a {
   text-decoration: none;
   color: black;
   font-size: 17px;
-  padding-bottom: 40px;
-  padding-left: 5px;
+  padding-bottom: 42px;
+  margin-top: 10px;
 }
 
 /* Style for active links or hover effect */
@@ -42,7 +42,7 @@ a {
 
 /* Container styles */
 .Container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: auto;
 }
 
@@ -83,7 +83,7 @@ nav ul li.search-container i {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   min-width: 800px;
   left: 0;
   top: 100%;
@@ -194,7 +194,6 @@ nav ul li.search-container i {
   color: rgb(203, 180, 158);
   text-align: center;
   font-size: 45px;
-  margin: 50px auto;
   width: 100%;
 }
 

@@ -6,6 +6,9 @@
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(255, 255, 255);
 }
+body {
+  padding: 20px; /* Giảm padding của body để phù hợp với màn hình */
+}
 
 /* Nav styles */
 nav {
@@ -42,8 +45,9 @@ a {
 
 /* Container styles */
 .Container {
-  max-width: 1400px;
+  max-width: 100%; /* Đặt chiều rộng tối đa để vừa trang web */
   margin: auto;
+  padding: 0 20px; /* Thêm khoảng trống hai bên */
 }
 
 /* Adjust icon positioning and search input styling */
@@ -201,4 +205,45 @@ nav ul li.search-container i {
 .text-center {
   font-family: "HarmoniaSemiLight";
   font: 35px;
+}
+/*-----------Slider----------*/
+.slider-product-one-content {
+  background-color: rgb(255, 255, 0);
+  padding: 12px;
+}
+.slider-product-one-content-title {
+  font-style: italic;
+}
+.slider-product-one-content-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.slider-product-one-content-item {
+  width: 19%;
+  background-color: #ddd;
+  padding: 50px 12px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.slider-product-one-content-item img {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.slider-product-one-content-item:hover img {
+  transform: translateY(-20px);
+}
+.slider-product-one-content-text {
+  padding-top: 20px;
+  list-style: none;
+}
+.slider-product-one-content-text li {
+  margin-bottom: 6px;
+}
+.slider-product-one-content-text li:nth-child(3) a {
+  text-decoration: line-through;
+}
+
+.slider-product-one-content-text li:last-child {
+  color: #fb6e2e;
 }

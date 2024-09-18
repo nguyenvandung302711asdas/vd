@@ -139,7 +139,7 @@ nav ul li.search-container i {
   transform: translateY(
     100px
   ); /* Di chuyển phần tử xuống để tạo hiệu ứng xuất hiện */
-  transition: opacity 2s ease-out, transform 2s ease-out; /* Hiệu ứng chuyển tiếp */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
 }
 
 .body-anh div.show {
@@ -353,6 +353,7 @@ nav ul li.search-container i {
 .slider-product-one-content-items:nth-child(2) {
   transform: translateX(100%);
 }
+
 /*Nhan hang*/
 .nhan-hang {
   width: 100%;
@@ -366,6 +367,8 @@ nav ul li.search-container i {
 .nhan-hang img {
   margin: 30px 30px; /* Điều chỉnh khoảng cách giữa các ảnh */
   width: auto;
+
+  border-radius: 5px;
   padding: 10px;
   transform: translateY(10px); /* Di chuyển ảnh xuống 10px */
   transition: transform 0.3s, box-shadow 0.3s; /* Thêm hiệu ứng chuyển tiếp */

@@ -1,102 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animation Example</title>
-    <style>
-      /* Text animation: Slide in from the left */
-      @keyframes slideInFromLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-100px); /* Start 100px to the left */
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0); /* Move to the original position */
-        }
-      }
-
-      /* Image animation: Slide in from the right */
-      @keyframes slideInFromRight {
-        from {
-          opacity: 0;
-          transform: translateX(100px); /* Start 100px to the right */
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0); /* Move to the original position */
-        }
-      }
-
-      .text-animated {
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider Animation</title>
+  <link rel="stylesheet" href="path_to_your_css.css">
+  <style>
+    /* Keyframe animation for sliding in from the bottom */
+    @keyframes slideInFromBottom {
+      from {
         opacity: 0;
-        animation: slideInFromLeft 1s ease-out forwards;
+        transform: translateY(50px); /* Start 50px below */
       }
+      to {
+        opacity: 1;
+        transform: translateY(0); /* End at the original position */
+      }
+    }
 
-      .image-animated {
-        opacity: 0;
-        animation: slideInFromRight 1s ease-out forwards;
-      }
+    .slider-product-one-content-item {
+      opacity: 0;
+      transform: translateY(50px);
+      animation: slideInFromBottom 1s ease-out forwards;
+      animation-delay: 0.3s;
+    }
 
-      /* Additional styles */
-      .anhtext {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    .slider-product-one-content-item:nth-child(2) {
+      animation-delay: 0.5s;
+    }
 
-      .anhgmt img {
-        width: 100%;
-        height: auto;
-      }
+    .slider-product-one-content-item:nth-child(3) {
+      animation-delay: 0.7s;
+    }
 
-      .textgmt {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-      }
+    .slider-product-one-content-item:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+  </style>
+</head>
+<body>
+  <div class="heading heading-effect text-center mb-4">
+    <h2><span>Mot so san pham</span></h2> 
+  </div>
 
-      .textgmt p {
-        margin: 0;
-        padding: 0.5rem;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="anhtext">
-      <div class="anhgmt">
-        <img src="img_index/GMT_master.png" alt="GMT" />
-      </div>
-      <div class="textgmt">
-        <p>Miếng đệm Cerachrom Công nghệ tiên tiến</p>
-        <p>Kết hợp vành đồng hồ xoay hai màu và kim‑24 giờ</p>
-        <p>Chức năng GMT Hai múi giờ cùng lúc</p>
+  <section class="slider-product-one">
+    <div class="container1">
+      <div class="slider-product-one-content">
+        <div class="slider-product-one-content-container">
+          <div class="slider-product-one-content-items-content">
+            <div class="slider-product-one-content-items">
+              <div class="slider-product-one-content-item">
+                <img src="img_index/mua_he_1.jpg" alt="">
+                <div class="slider-product-one-content-text">
+                  <li>Iphone 12 promax 128gb</li>
+                  <li>Online gia re</li>
+                  <li><a href="">32.990.000 <sup>d</sup></a><span> 6%</span></li>
+                  <li>15.000.000 <sup>d</sup></li>
+                  <li>Qua 400.000 <sup>d</sup></li>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                </div>
+              </div>
+              <!-- Repeat the structure for other items -->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <script>
-      // JavaScript for animation on scroll
-      document.addEventListener("DOMContentLoaded", function () {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              if (entry.target.classList.contains("textgmt")) {
-                entry.target.classList.add("text-animated");
-              } else if (entry.target.classList.contains("anhgmt")) {
-                entry.target.classList.add("image-animated");
-              }
-              observer.unobserve(entry.target);
-            }
-          });
-        });
-
-        const textTarget = document.querySelector(".textgmt");
-        const imageTarget = document.querySelector(".anhgmt");
-        if (textTarget) observer.observe(textTarget);
-        if (imageTarget) observer.observe(imageTarget);
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const productItems = document.querySelectorAll('.slider-product-one-content-item');
+      productItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }, index * 300); // Apply staggered delay
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>

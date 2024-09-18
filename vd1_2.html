@@ -1,18 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Chào mừng!</h1>
-    <button onclick="showMessage()">Nhấn tôi</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation Example</title>
+    <style>
+      /* Text animation: Slide in from the left */
+      @keyframes slideInFromLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-100px); /* Start 100px to the left */
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0); /* Move to the original position */
+        }
+      }
+
+      /* Image animation: Slide in from the right */
+      @keyframes slideInFromRight {
+        from {
+          opacity: 0;
+          transform: translateX(100px); /* Start 100px to the right */
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0); /* Move to the original position */
+        }
+      }
+
+      .text-animated {
+        opacity: 0;
+        animation: slideInFromLeft 1s ease-out forwards;
+      }
+
+      .image-animated {
+        opacity: 0;
+        animation: slideInFromRight 1s ease-out forwards;
+      }
+
+      /* Additional styles */
+      .anhtext {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .anhgmt img {
+        width: 100%;
+        height: auto;
+      }
+
+      .textgmt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .textgmt p {
+        margin: 0;
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="anhtext">
+      <div class="anhgmt">
+        <img src="img_index/GMT_master.png" alt="GMT" />
+      </div>
+      <div class="textgmt">
+        <p>Miếng đệm Cerachrom Công nghệ tiên tiến</p>
+        <p>Kết hợp vành đồng hồ xoay hai màu và kim‑24 giờ</p>
+        <p>Chức năng GMT Hai múi giờ cùng lúc</p>
+      </div>
+    </div>
 
     <script>
-        function showMessage() {
-            alert('Xin chào, thế giới!');
-        }
+      // JavaScript for animation on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              if (entry.target.classList.contains("textgmt")) {
+                entry.target.classList.add("text-animated");
+              } else if (entry.target.classList.contains("anhgmt")) {
+                entry.target.classList.add("image-animated");
+              }
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+
+        const textTarget = document.querySelector(".textgmt");
+        const imageTarget = document.querySelector(".anhgmt");
+        if (textTarget) observer.observe(textTarget);
+        if (imageTarget) observer.observe(imageTarget);
+      });
     </script>
-</body>
+  </body>
 </html>

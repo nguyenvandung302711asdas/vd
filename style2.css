@@ -139,7 +139,7 @@ nav ul li.search-container i {
   transform: translateY(
     100px
   ); /* Di chuyển phần tử xuống để tạo hiệu ứng xuất hiện */
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Hiệu ứng chuyển tiếp */
+  transition: opacity 2s ease-out, transform 2s ease-out; /* Hiệu ứng chuyển tiếp */
 }
 
 .body-anh div.show {
@@ -202,6 +202,46 @@ nav ul li.search-container i {
   padding: 20px;
   margin-top: 20px;
   max-width: 600px;
+}
+
+/**/
+/* Text animation: Slide in from the left */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px); /* Start 100px to the left */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Move to the original position */
+  }
+}
+
+/* Image animation: Slide in from the right */
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px); /* Start 100px to the right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* Move to the original position */
+  }
+}
+
+.text-animated {
+  opacity: 0;
+  animation: slideInFromLeft 2s ease-out forwards;
+}
+
+.image-animated {
+  opacity: 0;
+  animation: slideInFromRight 2s ease-out forwards;
+}
+
+.textgmt p {
+  margin: 0;
+  padding: 1rem;
 }
 
 /* VE DEP CUA SU TINH TE */

@@ -278,6 +278,7 @@
       </div>
       <!--GMT-->
       <div style="margin-top: 50px;">
+
         <!--Cổ điển-->
         <div>
           <!--gu nao cung co -- co dien-->
@@ -330,7 +331,6 @@
           <div class="container1">
             <div class="slider-product-one-content">
               <div class="slider-product-one-content-container">
-
                 <div class="slider-product-one-content-items-content">
                   <div class="slider-product-one-content-items">
                     <div class="slider-product-one-content-item">
@@ -490,7 +490,8 @@
 
     </footer>
     <script>
-     let index = 0;
+      //hieu ung truot slider
+let index = 0;
 const rightbtntwo = document.querySelector('.fa-chevron-right-tow');
 const leftbtntwo = document.querySelector('.fa-chevron-left-tow');
 const sliderContainer = document.querySelector('.slider-product-one-content-items-content');
@@ -533,7 +534,27 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkVisibility);
   checkVisibility(); // Kiểm tra khi tải trang
 });
+//Hiệu ứng xuất hiện ảnh gmt
 
+  document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains('textgmt')) {
+              entry.target.classList.add('text-animated');
+            } else if (entry.target.classList.contains('anhgmt')) {
+              entry.target.classList.add('image-animated');
+            }
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      const textTarget = document.querySelector('.textgmt');
+      const imageTarget = document.querySelector('.anhgmt');
+      if (textTarget) observer.observe(textTarget);
+      if (imageTarget) observer.observe(imageTarget);
+    });
 
 
     </script>

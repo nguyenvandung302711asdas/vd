@@ -3,511 +3,359 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Web lỏ</title>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.x.x/css/all.min.css">
-    <link rel="stylesheet" href="style2.css" />
-  
+    <title>Multiple Sliders Example</title>
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      /* Slider Styles */
+      .slider-container {
+        background-color: rgb(255, 255, 255);
+        padding: 12px;
+      }
+
+      .slider-items {
+        display: flex;
+        justify-content: space-evenly;
+      }
+
+      .slider-item {
+        width: 19%;
+        background-color: #ffffff;
+        padding: 50px 12px 50px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .slider-item img {
+        width: 100%;
+        transition: all 0.5s ease;
+      }
+
+      .slider-item:hover img {
+        transform: translateY(-20px);
+      }
+
+      .slider-text {
+        padding: 10px;
+        text-align: center;
+        list-style: none;
+      }
+
+      .slider-text li {
+        margin-bottom: 6px;
+      }
+
+      .slider-text li:nth-child(1):hover {
+        color: #fb6e2e;
+      }
+
+      .slider-text li:nth-child(4) {
+        font-weight: bold;
+      }
+
+      .slider-text li:nth-child(3) a {
+        text-decoration: line-through;
+        color: black;
+      }
+
+      .slider-text li:last-child {
+        color: #fb6e2e;
+      }
+
+      /* Slider Controls */
+      .slider-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .slider-controls {
+        position: absolute;
+        top: 60%;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 20px;
+      }
+
+      .slider-controls i {
+        color: #020202;
+        font-size: 30px;
+        height: 45px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        opacity: 0.5;
+      }
+
+      .slider-controls i:hover {
+        opacity: 1;
+      }
+
+      .slider-wrapper-content {
+        position: relative;
+        height: 500px;
+        transition: all 0.8s ease;
+      }
+
+      .slider-items {
+        position: absolute;
+        display: flex;
+        width: 100%;
+      }
+
+      .slider-items:nth-child(2) {
+        transform: translateX(100%);
+      }
+
+      .slider-items:nth-child(3) {
+        transform: translateX(200%);
+      }
+
+      /* Styles for the second slider */
+      .slider-product-two .slider-controls {
+        top: 60%;
+      }
+
+      .slider-product-two .fa-chevron-left-two,
+      .slider-product-two .fa-chevron-right-two {
+        color: #020202;
+        font-size: 30px;
+        height: 45px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        opacity: 0.5;
+      }
+
+      .slider-product-two .fa-chevron-left-two:hover,
+      .slider-product-two .fa-chevron-right-two:hover {
+        opacity: 1;
+      }
+
+      .slider-product-two .slider-items {
+        position: absolute;
+        display: flex;
+        width: 100%;
+      }
+
+      .slider-product-two .slider-items:nth-child(2) {
+        transform: translateX(100%);
+      }
+
+      .slider-product-two .slider-items:nth-child(3) {
+        transform: translateX(200%);
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="Container">
-          <ul>
-            <li>
-              <a href="#"
-                ><img src="logo.webp" alt="Logo" style="width: 200px"
-              /></a>
-            </li>
-            <li><a href="#" class="tieude">Gioi thieu</a></li>
-            <li><a href="#" class="tieude" style="color: red;" >XU HUONG 2024</a></li>
-            <li class="dropdown">
-              <a href="#" class="tieude"
-                >Menu<i class="fa-solid fa-sort-down"></i
-              ></a>
-              <div class="dropdown-content">  
-                <div class="row">
-                  <div class="column">
-                    <b>Pho bien nhat</b>
-                    <hr>
-                    <a href="#">Casio</a>
-                    <a href="#">Orient</a>
-                    <a href="#">Seiko</a>
-                    <a href="">Citizen</a>
-                    <a href="">Olym Piamus</a>
-                    <a href="">Bentley</a>
-                    <a href="">Bulova</a>
-                    <a href="">SRwatch</a>
-                    <a href="">Daniel Wellington</a>
-                  </div>
-                  <div class="column">
-                    <b>Hang cao cap</b>
-                    <hr>
-                    <a href="#"> Tissot</a>
-                    <a href="#"> Frederique Constant</a>
-                    <a href="#"> Orient Star</a>
-                    <a href="">Longines</a>
-                    <a href="">Certina</a>
-                    <a href="">Omega</a>
-                    <a href="">Ogival</a>
-                    <a href="">Movado</a>
-                    <a href="">Maurice Lacroix</a>
-                  </div>
-                  <div class="column">
-                    <b>Cac Hang Khac</b>
-                    <hr>
-                    <a href="#"> Carnival</a>
-                    <a href="#"> Calvin Klein</a>
-                    <a href="#"> Bonest Gatti</a>
-                    <a href=""> Daniel Klein</a>
-                    <a href="">Freelook</a>
-                    <a href="">SevenFriday</a>
-                    <a href="">Versace</a>
-                  </div>
-                  <div class="column">
-                    <b>Phan loai dong ho</b>
-                    <hr>
-                    <a href="#"> Carnival</a>
-                    <a href="#"> Calvin Klein</a>
-                    <a href="#"> Bonest Gatti</a>
-                    <a href=""> Daniel Klein</a>
-                    <a href="">Freelook</a>
-                    <a href="">SevenFriday</a>
-                    <a href="">Versace</a>
-                  </div>
-                  <div class="column">
-                    <b>Phong Cach</b>
-                    <hr>
-                    <a href="#"> Carnival</a>
-                    <a href="#"> Calvin Klein</a>
-                    <a href="#"> Bonest Gatti</a>
-                    <a href=""> Daniel Klein</a>
-                    <a href="">Freelook</a>
-                    <a href="">SevenFriday</a>
-                    <a href="">Versace</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="dropdown"  >
-              <a href="#" class="tieude" style="position: relative;">Nam<i class="fa-solid fa-sort-down"></i></a>
-              <div class="dropdown-content" style="position: absolute; left: -88px;">
-                <div class="row">
-                  <div class="column">
-                    <b>Pho bien nhat</b>
-                    <hr>
-                    <a href="#">Casio</a>
-                    <a href="#">Orient</a>
-                    <a href="#">Seiko</a>
-                    <a href="">Citizen</a>
-                    <a href="">Olym Piamus</a>
-                    <a href="">Bentley</a>
-                    <a href="">Bulova</a>
-                    <a href="">SRwatch</a>
-                    <a href="">Daniel Wellington</a>
-                  </div>
-                  <div class="column">
-                    <b>Hang cao cap</b>
-                    <hr>
-                    <a href="#"> Tissot</a>
-                    <a href="#"> Frederique Constant</a>
-                    <a href="#"> Orient Star</a>
-                    <a href="">Longines</a>
-                    <a href="">Certina</a>
-                    <a href="">Omega</a>
-                    <a href="">Ogival</a>
-                    <a href="">Movado</a>
-                    <a href="">Maurice Lacroix</a>
-                  </div>
-                  <div class="column">
-                    <b>Cac Hang Khac</b>
-                    <hr>
-                    <a href="#"> Carnival</a>
-                    <a href="#"> Calvin Klein</a>
-                    <a href="#"> Bonest Gatti</a>
-                    <a href=""> Daniel Klein</a>
-                    <a href="">Freelook</a>
-                    <a href="">SevenFriday</a>
-                    <a href="">Versace</a>
-                  </div>
-                  <div class="column">
-                    <b>Phan loai dong ho</b>
-                    <hr>
-                    <a href="#"> Carnival</a>
-                    <a href="#"> Calvin Klein</a>
-                    <a href="#"> Bonest Gatti</a>
-                    <a href=""> Daniel Klein</a>
-                    <a href="">Freelook</a>
-                    <a href="">SevenFriday</a>
-                    <a href="">Versace</a>
-                  </div>
-                  <div class="column">
-                    <b>Phong Cach</b>
-                    <hr>
-                    <a href="#"> Carnival</a>
-                    <a href="#"> Calvin Klein</a>
-                    <a href="#"> Bonest Gatti</a>
-                    <a href=""> Daniel Klein</a>
-                    <a href="">Freelook</a>
-                    <a href="">SevenFriday</a>
-                    <a href="">Versace</a>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="tieude" style="position: relative;">Nu<i class="fa-solid fa-sort-down"></i></a>
-              <div class="dropdown-content" style="position: absolute; left: -170px;">
-                  <div class="row">
-                      <div class="column">
-                          <b>Pho bien nhat</b>
-                          <hr>
-                          <a href="#">Casio</a>
-                          <a href="#">Orient</a>
-                          <a href="#">Seiko</a>
-                          <a href="">Citizen</a>
-                          <a href="">Olym Piamus</a>
-                          <a href="">Bentley</a>
-                          <a href="">Bulova</a>
-                          <a href="">SRwatch</a>
-                          <a href="">Daniel Wellington</a>
-                      </div>
-                      <div class="column">
-                          <b>Hang cao cap</b>
-                          <hr>
-                          <a href="#"> Tissot</a>
-                          <a href="#"> Frederique Constant</a>
-                          <a href="#"> Orient Star</a>
-                          <a href="">Longines</a>
-                          <a href="">Certina</a>
-                          <a href="">Omega</a>
-                          <a href="">Ogival</a>
-                          <a href="">Movado</a>
-                          <a href="">Maurice Lacroix</a>
-                        
-                      </div>
-                      <div class="column">
-                          <b>Cac Hang Khac</b>
-                          <hr>
-                          <a href="#"> Carnival</a>
-                          <a href="#"> Calvin Klein</a>
-                          <a href="#"> Bonest Gatti</a>
-                          <a href=""> Daniel Klein</a>
-                          <a href="">Freelook</a>
-                          <a href="">SevenFriday</a>
-                          <a href="">Versace</a>
-                      </div>
-                      <div class="column">
-                          <b>Phan loai dong ho</b>
-                          <hr>
-                          <a href="#"> Carnival</a>
-                          <a href="#"> Calvin Klein</a>
-                          <a href="#"> Bonest Gatti</a>
-                          <a href=""> Daniel Klein</a>
-                          <a href="">Freelook</a>
-                          <a href="">SevenFriday</a>
-                          <a href="">Versace</a>
-                      </div>
-                      <div class="column">
-                          <b>Phong Cach</b>
-                          <hr>
-                          <a href="#"> Carnival</a>
-                          <a href="#"> Calvin Klein</a>
-                          <a href="#"> Bonest Gatti</a>
-                          <a href=""> Daniel Klein</a>
-                          <a href="">Freelook</a>
-                          <a href="">SevenFriday</a>
-                          <a href="">Versace</a>
-                      </div>
-                  </div>
-              </div>
-          </li>
-            </li>
-            <li><a href="#" class="tieude">Luxury</a></li>
-            <li><a href="#" class="tieude">Cu cao cap</a></li>
-            <li class="search-container">
-              <input type="text" placeholder="Tim la thay..." />
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <article>
-      <!--VIDEO-->
-      <div style="display: flex; justify-content: center;">
-        <video src="video_index.webm" width="1400px" autoplay></video>
+    <!-- First Slider -->
+    <div class="heading heading-effect text-center mb-4">
+      <h2>
+        <span>Mot so san pham</span>
+      </h2>
     </div>
-    <!--Nhan hang dong ho-->
-    <div class="nhan-hang">
-      <img src="img_index/casi_1.jpg" alt="">
-      <img src="img_index/hublot.png" alt="">
-      <img src="img_index/omera.png" alt="">
-      <img src="img_index/orient.jpg" alt="">
-      <img src="img_index/seiko.jpg" alt="">
-      <img src="img_index/shock.jpg" alt="">
-    </div>
-      <!--Gu nao cung co-->
-      <div>
-        <p class="gunaocungco" style="width: 1500px; margin-top: 50px;">Gu nào cũng có</p>
-      </div>
-      <!--Lich lam don gian tinh te-->
-      <div class="body-anh d-flex justify-content-center" style="margin-left: 50px;">
-        <div>
-          <img class="anh1" src="img_index/DonGian.jpg" alt="Don gian">
-          <p class="caption">ĐƠN GIẢN</p>
-        </div>
-        <div>
-          <img class="anh2" src="img_index/TinhTe.jpg"  alt="Tinh te">
-          <p class="caption" style="margin-left: 1px;">TINH TẾ</p>
-        </div>
-        <div>
-          <img class="anh3" src="img_index/LichLam.jpg" alt="Lich Lam">
-          <p class="caption" style="margin-left: 1px;" >LỊCH LÃM</p>
-        </div>
-      </div>
-      <!--GMT-->
-      <div style="margin-top: 50px;">
-
-        <!--Cổ điển-->
-        <div>
-          <!--gu nao cung co -- co dien-->
-          <div>
-            <p class="gunaocungco" style="width: 1500px; margin-top: 50px;">Cổ điển</p>
-          </div>
-          <!--Lich lam don gian tinh te -- co dien -->
-          <div class="body-anh d-flex justify-content-center" style="margin-left: 50px;">
-            <div>
-              <img class="anh1" src="img_index/co_dien_1.jpg" alt="Don gian">
-             
-            </div>
-            <div>
-              <img class="anh2" src="img_index/co_dien_3.jpg"  alt="Tinh te">
-             
-            </div>
-            <div>
-              <img class="anh3" src="img_index/co_dien_2.jpg" alt="Lich Lam">
-             
-            </div>
-          </div>
-          <!--vẻ đẹp của sự tinh tế-->
-          <div>
-            <p class="vedep">
-              Vẻ đẹp của sự tinh tế, đẳng cấp  <br> vượt thời gian.
-            </p>
-          </div>
-          <div class="anhtext">
-            <div class="anhgmt">
-             <img src="img_index/GMT_master.png" width="800px" height="500px" alt="GMT">
-            </div>
-           <div class="textgmt" d-flex justify-content-center>
-             <p>Miếng đệm Cerachrom Công nghệ tiên tiến</p>
-             <p>Kết hợp vành đồng hồ xoay hai màu và kim‑24 giờ</p>
-             <p>Chức năng GMT Hai múi giờ cùng lúc</p>
-           </div>
-           </div>
-        </div>
-      </div>
-
-        <!--Mot so san pham-->
-        <div class="heading heading-effect text-center mb-4">
-          <h2>
-            <span>Mot so san pham</span>
-          </h2> 
-        </div>
-
-        <!-------------------------Slide Product----------------->
-        <section class="slider-product-one">
-          <div class="container1">
-            <div class="slider-container">
-              <div class="slider-wrapper">
-                <div class="slider-wrapper-content">
-                  <div class="slider-items">
-                    <!-- Slider Item 1 -->
-                    <div class="slider-item">
-                      <img src="img_index/mua_he_1.jpg" alt="" />
-                      <div class="slider-text">
-                        <li>Iphone 12 promax 128gb</li>
-                        <li>Online gia re</li>
-                        <li>
-                          <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
-                        </li>
-                        <li>15.000.000 <sup>d</sup></li>
-                        <li>Qua 400.000 <sup>d</sup></li>
-                        <li>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </li>
-                      </div>
-                    </div>
-                    <!-- Add more slider-item divs as needed -->
-                    <div class="slider-item">
-                      <img src="img_index/mua_he_1.jpg" alt="" />
-                      <div class="slider-text">
-                        <li>Iphone 12 promax 128gb</li>
-                        <li>Online gia re</li>
-                        <li>
-                          <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
-                        </li>
-                        <li>15.000.000 <sup>d</sup></li>
-                        <li>Qua 400.000 <sup>d</sup></li>
-                        <li>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </li>
-                      </div>
-                    </div>
-                    <!-- Add more slider-item divs as needed -->
-                    <div class="slider-item">
-                      <img src="img_index/mua_he_1.jpg" alt="" />
-                      <div class="slider-text">
-                        <li>Iphone 12 promax 128gb</li>
-                        <li>Online gia re</li>
-                        <li>
-                          <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
-                        </li>
-                        <li>15.000.000 <sup>d</sup></li>
-                        <li>Qua 400.000 <sup>d</sup></li>
-                        <li>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </li>
-                      </div>
-                    </div>
-                    <!-- Add more slider-item divs as needed -->
-                    <div class="slider-item">
-                      <img src="img_index/mua_he_1.jpg" alt="" />
-                      <div class="slider-text">
-                        <li>Iphone 12 promax 128gb</li>
-                        <li>Online gia re</li>
-                        <li>
-                          <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
-                        </li>
-                        <li>15.000.000 <sup>d</sup></li>
-                        <li>Qua 400.000 <sup>d</sup></li>
-                        <li>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </li>
-                      </div>
-                    </div>
-                    <!-- Add more slider-item divs as needed -->
-                  </div>
-                  <div class="slider-items">
-                    <!-- Slider Item 2 -->
-                    <div class="slider-item">
-                      <img src="img_index/mua_he_1.jpg" alt="" />
-                      <div class="slider-text">
-                        <li>Iphone 12 promax 128gb</li>
-                        <li>Online gia re</li>
-                        <li>
-                          <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
-                        </li>
-                        <li>15.000.000 <sup>d</sup></li>
-                        <li>Qua 400.000 <sup>d</sup></li>
-                        <li>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </li>
-                      </div>
-                    </div>
-                    <!-- Add more slider-item divs as needed -->
-                    <div class="slider-item">
-                      <img src="img_index/mua_he_1.jpg" alt="" />
-                      <div class="slider-text">
-                        <li>Iphone 12 promax 128gb</li>
-                        <li>Online gia re</li>
-                        <li>
-                          <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
-                        </li>
-                        <li>15.000.000 <sup>d</sup></li>
-                        <li>Qua 400.000 <sup>d</sup></li>
-                        <li>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </li>
-                      </div>
-                    </div>
-                    <!-- Add more slider-item divs as needed -->
-                    <div class="slider-item">
-                      <img src="img_index/mua_he_1.jpg" alt="" />
-                      <div class="slider-text">
-                        <li>Iphone 12 promax 128gb</li>
-                        <li>Online gia re</li>
-                        <li>
-                          <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
-                        </li>
-                        <li>15.000.000 <sup>d</sup></li>
-                        <li>Qua 400.000 <sup>d</sup></li>
-                        <li>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </li>
-                      </div>
-                    </div>
-                    <!-- Add more slider-item divs as needed -->
-                    <div class="slider-item">
-                      <img src="img_index/mua_he_1.jpg" alt="" />
-                      <div class="slider-text">
-                        <li>Iphone 12 promax 128gb</li>
-                        <li>Online gia re</li>
-                        <li>
-                          <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
-                        </li>
-                        <li>15.000.000 <sup>d</sup></li>
-                        <li>Qua 400.000 <sup>d</sup></li>
-                        <li>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                          <i class="fas fa-star"></i>
-                        </li>
-                      </div>
-                    </div>
-                    <!-- Add more slider-item divs as needed -->
+    <section class="slider-product-one">
+      <div class="container1">
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <div class="slider-wrapper-content">
+              <div class="slider-items">
+                <!-- Slider Item 1 -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_1.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Iphone 12 promax 128gb</li>
+                    <li>Online gia re</li>
+                    <li>
+                      <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
+                    </li>
+                    <li>15.000.000 <sup>d</sup></li>
+                    <li>Qua 400.000 <sup>d</sup></li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
                   </div>
                 </div>
-                <div class="slider-controls">
-                  <i class="fa-solid fa-chevron-left fa-chevron-left-one"></i>
-                  <i class="fa-solid fa-chevron-right fa-chevron-right-one"></i>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_1.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Iphone 12 promax 128gb</li>
+                    <li>Online gia re</li>
+                    <li>
+                      <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
+                    </li>
+                    <li>15.000.000 <sup>d</sup></li>
+                    <li>Qua 400.000 <sup>d</sup></li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
                 </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_1.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Iphone 12 promax 128gb</li>
+                    <li>Online gia re</li>
+                    <li>
+                      <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
+                    </li>
+                    <li>15.000.000 <sup>d</sup></li>
+                    <li>Qua 400.000 <sup>d</sup></li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_1.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Iphone 12 promax 128gb</li>
+                    <li>Online gia re</li>
+                    <li>
+                      <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
+                    </li>
+                    <li>15.000.000 <sup>d</sup></li>
+                    <li>Qua 400.000 <sup>d</sup></li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+              </div>
+              <div class="slider-items">
+                <!-- Slider Item 2 -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_1.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Iphone 12 promax 128gb</li>
+                    <li>Online gia re</li>
+                    <li>
+                      <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
+                    </li>
+                    <li>15.000.000 <sup>d</sup></li>
+                    <li>Qua 400.000 <sup>d</sup></li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_1.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Iphone 12 promax 128gb</li>
+                    <li>Online gia re</li>
+                    <li>
+                      <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
+                    </li>
+                    <li>15.000.000 <sup>d</sup></li>
+                    <li>Qua 400.000 <sup>d</sup></li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_1.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Iphone 12 promax 128gb</li>
+                    <li>Online gia re</li>
+                    <li>
+                      <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
+                    </li>
+                    <li>15.000.000 <sup>d</sup></li>
+                    <li>Qua 400.000 <sup>d</sup></li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_1.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Iphone 12 promax 128gb</li>
+                    <li>Online gia re</li>
+                    <li>
+                      <a href="">32.990.000 <sup>d</sup> </a><span> 6%</span>
+                    </li>
+                    <li>15.000.000 <sup>d</sup></li>
+                    <li>Qua 400.000 <sup>d</sup></li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
               </div>
             </div>
+            <div class="slider-controls">
+              <i class="fa-solid fa-chevron-left fa-chevron-left-one"></i>
+              <i class="fa-solid fa-chevron-right fa-chevron-right-one"></i>
+            </div>
           </div>
-        </section>
-        
+        </div>
+      </div>
+    </section>
+
     <!-- Second Slider -->
     <div class="heading heading-effect text-center mb-4">
       <h2>
@@ -992,6 +840,7 @@
                   </div>
                 </div>
                 <!-- Add more slider-item divs as needed -->
+
                 <div class="slider-item">
                   <img src="img_index/mua_he_2.jpg" alt="" />
                   <div class="slider-text">
@@ -1021,15 +870,179 @@
       </div>
     </section>
     <!--5-->
-   
-        
-    </article>
-    <footer>
+    <div class="heading heading-effect text-center mb-4">
+      <h2>
+        <span>Mot so san pham</span>
+      </h2>
+    </div>
+    <section class="slider-product-fifth">
+      <div class="container2">
+        <div class="slider-container">
+          <div class="slider-wrapper">
+            <div class="slider-wrapper-content">
+              <div class="slider-items">
+                <!-- Slider Item 1 -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_2.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Product 1</li>
+                    <li>Description 1</li>
+                    <li><a href="">Price 1</a><span> Discount 1</span></li>
+                    <li>Original Price 1</li>
+                    <li>Additional Info 1</li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_2.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Product 1</li>
+                    <li>Description 1</li>
+                    <li><a href="">Price 1</a><span> Discount 1</span></li>
+                    <li>Original Price 1</li>
+                    <li>Additional Info 1</li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_2.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Product 1</li>
+                    <li>Description 1</li>
+                    <li><a href="">Price 1</a><span> Discount 1</span></li>
+                    <li>Original Price 1</li>
+                    <li>Additional Info 1</li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_2.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Product 1</li>
+                    <li>Description 1</li>
+                    <li><a href="">Price 1</a><span> Discount 1</span></li>
+                    <li>Original Price 1</li>
+                    <li>Additional Info 1</li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+              </div>
+              <div class="slider-items">
+                <!-- Slider Item 2 -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_2.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Product 2</li>
+                    <li>Description 2</li>
+                    <li><a href="">Price 2</a><span> Discount 2</span></li>
+                    <li>Original Price 2</li>
+                    <li>Additional Info 2</li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_2.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Product 1</li>
+                    <li>Description 1</li>
+                    <li><a href="">Price 1</a><span> Discount 1</span></li>
+                    <li>Original Price 1</li>
+                    <li>Additional Info 1</li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+                <div class="slider-item">
+                  <img src="img_index/mua_he_2.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Product 1</li>
+                    <li>Description 1</li>
+                    <li><a href="">Price 1</a><span> Discount 1</span></li>
+                    <li>Original Price 1</li>
+                    <li>Additional Info 1</li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
 
-    </footer>
+                <div class="slider-item">
+                  <img src="img_index/mua_he_2.jpg" alt="" />
+                  <div class="slider-text">
+                    <li>Product 1</li>
+                    <li>Description 1</li>
+                    <li><a href="">Price 1</a><span> Discount 1</span></li>
+                    <li>Original Price 1</li>
+                    <li>Additional Info 1</li>
+                    <li>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </li>
+                  </div>
+                </div>
+                <!-- Add more slider-item divs as needed -->
+              </div>
+            </div>
+            <div class="slider-controls">
+              <i class="fa-solid fa-chevron-left fa-chevron-left-fifth"></i>
+              <i class="fa-solid fa-chevron-right fa-chevron-right-fifth"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <script>
-        // JavaScript for the first slider
-        let indexOne = 0;
+      // JavaScript for the first slider
+      let indexOne = 0;
       const rightBtnOne = document.querySelector(".fa-chevron-right-one");
       const leftBtnOne = document.querySelector(".fa-chevron-left-one");
       const sliderContainerOne = document.querySelector(
@@ -1055,8 +1068,8 @@
         sliderContainerOne.style.transform = `translateX(-${offset}%)`;
       }
 
-          //2
-          let indexTwo = 0;
+      //2
+      let indexTwo = 0;
       const rightBtnTwo = document.querySelector(".fa-chevron-right-two");
       const leftBtnTwo = document.querySelector(".fa-chevron-left-two");
       const sliderContainerTwo = document.querySelector(
@@ -1098,7 +1111,7 @@
         updateSliderPositionThird();
       });
 
-      leftBtnThird.addEventListener("click", function () {
+      leftBtnTwo.addEventListener("click", function () {
         indexThird = (indexThird - 1 + itemsCountThird) % itemsCountThird;
         updateSliderPositionThird();
       });
@@ -1127,7 +1140,7 @@
         updateSliderPositionFourth();
       });
 
-      leftBtnFourth.addEventListener("click", function () {
+      leftBtnTwo.addEventListener("click", function () {
         indexFourth = (indexFourth - 1 + itemsCountFourth) % itemsCountFourth;
         updateSliderPositionFourth();
       });
@@ -1137,48 +1150,31 @@
         sliderContainerFourth.style.transform = `translateX(-${offset}%)`;
       }
       //5
-    // hieu ung xuat hien anh tinh te lich lam
+      let indexFifth = 0;
+      const rightBtnFifth = document.querySelector(".fa-chevron-right-fifth  ");
+      const leftBtnFifth = document.querySelector(".fa-chevron-left-fifth  ");
+      const sliderContainerFifth = document.querySelector(
+        ".slider-product-fifth  .slider-wrapper-content"
+      );
+      const imgNumFifth = document.querySelectorAll(
+        ".slider-product-fifth  .slider-items"
+      );
+      const itemsCountFifth = imgNumFifth.length;
 
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.body-anh div');
-
-  function checkVisibility() {
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-
-    elements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top + scrollTop;
-
-      if (scrollTop + windowHeight > elementTop) {
-        element.classList.add('show');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', checkVisibility);
-  checkVisibility(); // Kiểm tra khi tải trang
-});
-//Hiệu ứng xuất hiện ảnh gmt
-
-  document.addEventListener('DOMContentLoaded', function() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (entry.target.classList.contains('textgmt')) {
-              entry.target.classList.add('text-animated');
-            } else if (entry.target.classList.contains('anhgmt')) {
-              entry.target.classList.add('image-animated');
-            }
-            observer.unobserve(entry.target);
-          }
-        });
+      rightBtnFifth.addEventListener("click", function () {
+        indexFifth = (indexFifth + 1) % itemsCountFifth;
+        updateSliderPositionFifth();
       });
 
-      const textTarget = document.querySelector('.textgmt');
-      const imageTarget = document.querySelector('.anhgmt');
-      if (textTarget) observer.observe(textTarget);
-      if (imageTarget) observer.observe(imageTarget);
-    });
+      leftBtnTwo.addEventListener("click", function () {
+        indexFifth = (indexFifth - 1 + itemsCountFifth) % itemsCountFifth;
+        updateSliderPositionFifth();
+      });
+
+      function updateSliderPositionFifth() {
+        const offset = indexFifth * 100;
+        sliderContainerFifth.style.transform = `translateX(-${offset}%)`;
+      }
     </script>
   </body>
 </html>

@@ -3,46 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slider Animation</title>
-  <link rel="stylesheet" href="path_to_your_css.css">
+  <title>Slider Example</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Keyframe animation for sliding in from the bottom */
-    @keyframes slideInFromBottom {
-      from {
-        opacity: 0;
-        transform: translateY(50px); /* Start 50px below */
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0); /* End at the original position */
-      }
-    }
+ /*-----------Slider----------*/
+.slider-product-one-content {
+  background-color: rgb(255, 255, 255);
+  padding: 12px;
+}
 
-    .slider-product-one-content-item {
-      opacity: 0;
-      transform: translateY(50px);
-      animation: slideInFromBottom 1s ease-out forwards;
-      animation-delay: 0.3s;
-    }
+.slider-product-one-content-items {
+  display: flex;
+  justify-content: space-evenly;
+}
 
-    .slider-product-one-content-item:nth-child(2) {
-      animation-delay: 0.5s;
-    }
+.slider-product-one-content-item {
+  width: 19%;
+  background-color: #ffffff;
+  padding: 50px 12px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.slider-product-one-content-item img {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.slider-product-one-content-item:hover img {
+  transform: translateY(-20px);
+}
+.slider-product-one-content-text {
+  padding: 20px;
+  text-align: center;
+  list-style: none;
+}
+.slider-product-one-content-text li {
+  margin-bottom: 6px;
+}
 
-    .slider-product-one-content-item:nth-child(3) {
-      animation-delay: 0.7s;
-    }
+.slider-product-one-content-text li:nth-child(1):hover {
+  color: #fb6e2e;
+}
 
-    .slider-product-one-content-item:nth-child(4) {
-      animation-delay: 0.9s;
-    }
+.slider-product-one-content-text li:nth-child(4) {
+  font-weight: bold;
+}
+
+.slider-product-one-content-text li:nth-child(3) a {
+  text-decoration: line-through;
+  color: black;
+}
+
+.slider-product-one-content-text li:last-child {
+  color: #fb6e2e;
+}
+
+/*---------- slider product -- nut chuyen slide -----------*/
+.slider-product-one-content-container {
+  position: relative;
+  overflow: hidden;
+}
+.slider-product-one-content-btn {
+  position: absolute;
+  top: 60%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 20px;
+}
+/*nut*/
+.slider-product-one-content-btn i {
+  color: #020202;
+  font-size: 30px;
+  height: 45px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0.5; /*lam mờ*/
+}
+.slider-product-one-content-btn i:hover {
+  opacity: 0.5;
+}
+
+/*chuyen slide*/
+.slider-product-one-content-items-content {
+  position: relative;
+  height: 500px;
+  transition: all 0.8s ease;
+}
+.slider-product-one-content-items {
+  position: absolute;
+}
+.slider-product-one-content-items:nth-child(2) {
+  transform: translateX(100%);
+}
+.slider-product-one-content-items:nth-child(3) {
+  transform: translateX(200%);
+}
   </style>
 </head>
 <body>
-  <div class="heading heading-effect text-center mb-4">
-    <h2><span>Mot so san pham</span></h2> 
-  </div>
 
+  <!--Mot so san pham-->
+  <div class="heading heading-effect text-center mb-4">
+    <h2>
+      <span>Mot so san pham</span>
+    </h2> 
+  </div>
+  <!-------------------------Slide Product----------------->
   <section class="slider-product-one">
     <div class="container1">
       <div class="slider-product-one-content">
@@ -54,7 +126,7 @@
                 <div class="slider-product-one-content-text">
                   <li>Iphone 12 promax 128gb</li>
                   <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup></a><span> 6%</span></li>
+                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
                   <li>15.000.000 <sup>d</sup></li>
                   <li>Qua 400.000 <sup>d</sup></li>
                   <li>
@@ -66,24 +138,188 @@
                   </li>
                 </div>
               </div>
-              <!-- Repeat the structure for other items -->
+              <div class="slider-product-one-content-item">
+                <img src="img_index/mua_he_1.jpg" alt="">
+                <div class="slider-product-one-content-text">
+                  <li>Iphone 12 promax 128gb</li>
+                  <li>Online gia re</li>
+                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
+                  <li>15.000.000 <sup>d</sup></li>
+                  <li>Qua 400.000 <sup>d</sup></li>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                </div>
+              </div>
+              <div class="slider-product-one-content-item">
+                <img src="img_index/mua_he_1.jpg" alt="">
+                <div class="slider-product-one-content-text">
+                  <li>Iphone 12 promax 128gb</li>
+                  <li>Online gia re</li>
+                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
+                  <li>15.000.000 <sup>d</sup></li>
+                  <li>Qua 400.000 <sup>d</sup></li>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                </div>
+              </div>
+              <div class="slider-product-one-content-item">
+                <img src="img_index/mua_he_1.jpg" alt="">
+                <div class="slider-product-one-content-text">
+                  <li>Iphone 12 promax 128gb</li>
+                  <li>Online gia re</li>
+                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
+                  <li>15.000.000 <sup>d</sup></li>
+                  <li>Qua 400.000 <sup>d</sup></li>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="slider-product-one-content-items">
+              <div class="slider-product-one-content-item">
+                <img src="img_index/mua_he_1.jpg" alt="">
+                <div class="slider-product-one-content-text">
+                  <li>Iphone 12 promax 128gb</li>
+                  <li>Online gia re</li>
+                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
+                  <li>15.000.000 <sup>d</sup></li>
+                  <li>Qua 400.000 <sup>d</sup></li>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                </div>
+              </div>
+              <div class="slider-product-one-content-item">
+                <img src="img_index/mua_he_2.jpg" alt="">
+                <div class="slider-product-one-content-text">
+                  <li>Iphone 12 promax 128gb</li>
+                  <li>Online gia re</li>
+                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
+                  <li>15.000.000 <sup>d</sup></li>
+                  <li>Qua 400.000 <sup>d</sup></li>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                </div>
+              </div>
+              <div class="slider-product-one-content-item">
+                <img src="img_index/mua_he_1.jpg" alt="">
+                <div class="slider-product-one-content-text">
+                  <li>Iphone 12 promax 128gb</li>
+                  <li>Online gia re</li>
+                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
+                  <li>15.000.000 <sup>d</sup></li>
+                  <li>Qua 400.000 <sup>d</sup></li>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                </div>
+              </div>
+              <div class="slider-product-one-content-item">
+                <img src="img_index/mua_he_1.jpg" alt="">
+                <div class="slider-product-one-content-text">
+                  <li>Iphone 12 promax 128gb</li>
+                  <li>Online gia re</li>
+                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
+                  <li>15.000.000 <sup>d</sup></li>
+                  <li>Qua 400.000 <sup>d</sup></li>
+                  <li>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </li>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="slider-product-one-content-btn">
+            <i class="fa-solid fa-chevron-left fa-chevron-left-tow"></i>
+            <i class="fa-solid fa-chevron-right fa-chevron-right-tow"></i>
+        </div>
+
+        </div>
+   
+        
         </div>
       </div>
-    </div>
+  
   </section>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const productItems = document.querySelectorAll('.slider-product-one-content-item');
-      productItems.forEach((item, index) => {
-        setTimeout(() => {
-          item.style.opacity = '1';
-          item.style.transform = 'translateY(0)';
-        }, index * 300); // Apply staggered delay
-      });
-    });
-  </script>
+   
+
 </body>
+<script>
+  
+    //hieu ung truot slider 1
+    let index = 0;
+      const rightbtntwo = document.querySelector('.fa-chevron-right-tow');
+      const leftbtntwo = document.querySelector('.fa-chevron-left-tow');
+      const sliderContainer = document.querySelector('.slider-product-one-content-items-content');
+      const imgNubertwo = document.querySelectorAll('.slider-product-one-content-items'); // Get all items
+      const itemsCount = imgNubertwo.length;
+rightbtntwo.addEventListener("click", function() {
+    index = (index + 1) % itemsCount; 
+    updateSliderPosition();
+});
+
+leftbtntwo.addEventListener("click", function() {
+    index = (index - 1 + itemsCount) % itemsCount; 
+    updateSliderPosition();
+});
+
+function updateSliderPosition() {
+    const offset = index * 100; 
+    sliderContainer.style.transform = `translateX(-${offset}%)`; 
+}
+// hieu ung xuat hien anh tinh te lich lam
+
+document.addEventListener('DOMContentLoaded', () => {
+  const elements = document.querySelectorAll('.body-anh div');
+
+  function checkVisibility() {
+    const windowHeight = window.innerHeight;
+    const scrollTop = window.scrollY;
+
+    elements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top + scrollTop;
+
+      if (scrollTop + windowHeight > elementTop) {
+        element.classList.add('show');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkVisibility);
+  checkVisibility(); // Kiểm tra khi tải trang
+});
+</script>
 </html>

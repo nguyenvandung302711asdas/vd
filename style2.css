@@ -9,6 +9,8 @@
 }
 body {
   padding: 20px; /* Giảm padding của body để phù hợp với màn hình */
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Nav styles */
@@ -480,33 +482,37 @@ nav ul li.search-container i {
   cursor: pointer;
 }
 /*footer*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
 .wrapper {
-  max-width: 1170px;
+  max-width: 1500px;
   margin: auto;
 }
 .flex-row {
   display: flex;
+  background-color: #000000;
   flex-wrap: wrap;
 }
 .no-bullets {
   list-style: none;
 }
 .footer-section {
-  background-color: #24262b;
-  padding: 70px 0;
+  background-color: #ffffff;
+  padding: 30px 10px;
 }
 .footer-column {
   width: 25%;
-  padding: 0 15px;
+  padding: 0px 25px;
+
+  background-color: #000000;
 }
+
 .footer-column h4 {
+  margin-left: 30px;
+  margin-top: 20px;
   font-size: 18px;
   color: #fdaf17;
   text-transform: capitalize;
-  margin-bottom: 35px;
-  font-weight: 500;
+  background-color: #000000;
+  font-weight: 500px;
   position: relative;
 }
 .footer-column h4::before {
@@ -514,22 +520,30 @@ nav ul li.search-container i {
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: #e91e63;
+
   height: 2px;
   box-sizing: border-box;
   width: 50px;
 }
+.footer-column ul {
+  background-color: #000000;
+}
+.footer-column ul li {
+  background-color: #000000;
+}
+.social-icons a i {
+  background-color: #000000;
+}
 .footer-column ul li:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .footer-column ul li a {
-  font-size: 16px;
+  background-color: #000000;
+  font-size: 17px;
   text-transform: capitalize;
-  color: #ffffff;
   text-decoration: none;
   font-weight: 300;
-  color: #bbbbbb;
-  display: block;
+  color: #ffffff;
   transition: all 0.3s ease;
 }
 .footer-column ul li a:hover {
@@ -538,98 +552,10 @@ nav ul li.search-container i {
 }
 .footer-column .social-icons a {
   display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 10px 10px 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  color: #ffffff;
-  transition: all 0.5s ease;
-}
-.footer-column .social-icons a:hover {
-  color: #24262b;
-  background-color: #fdaf17;
-}
-
-/*responsive*/
-@media (max-width: 767px) {
-  .footer-column {
-    width: 50%;
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 574px) {
-  .footer-column {
-    width: 100%;
-  }
-}
-
-
-/*ákdjbasf*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
-.wrapper {
-  max-width: 1170px;
-  margin: auto;
-}
-.flex-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-.no-bullets {
-  list-style: none;
-}
-.footer-section {
-  background-color: #24262b;
-  padding: 70px 0;
-}
-.footer-column {
-  width: 25%;
-  padding: 0 15px;
-}
-.footer-column h4 {
-  font-size: 18px;
-  color: #fdaf17;
-  text-transform: capitalize;
-  margin-bottom: 35px;
-  font-weight: 500;
-  position: relative;
-}
-.footer-column h4::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  background-color: #e91e63;
-  height: 2px;
-  box-sizing: border-box;
+  height: 20px;
   width: 50px;
-}
-.footer-column ul li:not(:last-child) {
-  margin-bottom: 10px;
-}
-.footer-column ul li a {
-  font-size: 16px;
-  text-transform: capitalize;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 300;
-  color: #bbbbbb;
-  display: block;
-  transition: all 0.3s ease;
-}
-.footer-column ul li a:hover {
-  color: #fdaf17;
-  padding-left: 8px;
-}
-.footer-column .social-icons a {
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
-  margin: 0 10px 10px 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 5px 10px 20px 0;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
@@ -637,10 +563,9 @@ nav ul li.search-container i {
   transition: all 0.5s ease;
 }
 .footer-column .social-icons a:hover {
-  color: #24262b;
+  color: #fdaf17;
   background-color: #fdaf17;
 }
-
 /*responsive*/
 @media (max-width: 767px) {
   .footer-column {

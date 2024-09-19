@@ -1,112 +1,90 @@
-/* General padding for the section */
-.pt-4, .pb-4 {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 1170px;
+  margin: auto;
+}
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.no-bullets {
+  list-style: none;
+}
+.footer-section {
+  background-color: #24262e;
+  padding: 70px 0;
+}
+.footer-column {
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-column h4 {
+  font-size: 18px;
+  color: #fdaf17;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-column h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-column ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-column ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-column ul li a:hover {
+  color: #fdaf17;
+  padding-left: 8px;
+}
+.footer-column .social-icons a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-column .social-icons a:hover {
+  color: #24262b;
+  background-color: #fdaf17;
+}
+
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-column {
+    width: 50%;
+    margin-bottom: 30px;
   }
-  
-  /* Styling for the heading */
-  .heading h2 {
-    font-size: 2.5rem;
-    color: #000000;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .heading.text-center {
-    text-align: center;
-  }
-  
-  .mb-4 {
-    margin-bottom: 2rem;
-  }
-  
-  /* Testimonials carousel container */
-  .owl-testimonials {
-    position: relative;
+}
+@media (max-width: 574px) {
+  .footer-column {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
   }
-  
-  /* Each testimonial item */
-  .testimonial {
-    background-color: #000000;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .testimonial:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Comment text */
-  .comment {
-    font-size: 1.1rem;
-    color: #ffffff;
-    margin-bottom: 15px;
-  }
-  
-  /* User info section */
-  .info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-right: 15px;
-  }
-  
-  .text-dark {
-    color: #e1e1e1;
-  }
-  
-  .font-weight-bold {
-    font-weight: 700;
-  }
-  
-  /* Navigation dots */
-  .owl-dots {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .owl-dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    border-radius: 50%;
-    background-color: #ddd;
-    cursor: pointer;
-  }
-  
-  .owl-dot.active {
-    background-color: #ffffff;
-  }
-  
-  /* Prev/Next navigation buttons (if used) */
-  .owl-nav .owl-prev, .owl-nav .owl-next {
-    background-color: #333;
-    color: #fff;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .owl-nav .owl-prev:hover, .owl-nav .owl-next:hover {
-    background-color: #5f5d5d;
-  }
-  
+}

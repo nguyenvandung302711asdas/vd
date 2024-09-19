@@ -1,325 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slider Example</title>
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
- /*-----------Slider----------*/
-.slider-product-one-content {
-  background-color: rgb(255, 255, 255);
-  padding: 12px;
+  <head>
+    <title>Footer Design</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
 }
-
-.slider-product-one-content-items {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  max-width: 1170px;
+  margin: auto;
+}
+.flex-row {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-
-.slider-product-one-content-item {
-  width: 19%;
-  background-color: #ffffff;
-  padding: 50px 12px 50px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.slider-product-one-content-item img {
-  width: 100%;
-  transition: all 0.5s ease;
-}
-.slider-product-one-content-item:hover img {
-  transform: translateY(-20px);
-}
-.slider-product-one-content-text {
-  padding: 20px;
-  text-align: center;
+.no-bullets {
   list-style: none;
 }
-.slider-product-one-content-text li {
-  margin-bottom: 6px;
+.footer-section {
+  background-color: #24262b;
+  padding: 70px 0;
 }
-
-.slider-product-one-content-text li:nth-child(1):hover {
-  color: #fb6e2e;
+.footer-column {
+  width: 25%;
+  padding: 0 15px;
 }
-
-.slider-product-one-content-text li:nth-child(4) {
-  font-weight: bold;
-}
-
-.slider-product-one-content-text li:nth-child(3) a {
-  text-decoration: line-through;
-  color: black;
-}
-
-.slider-product-one-content-text li:last-child {
-  color: #fb6e2e;
-}
-
-/*---------- slider product -- nut chuyen slide -----------*/
-.slider-product-one-content-container {
+.footer-column h4 {
+  font-size: 18px;
+  color: #fdaf17;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
   position: relative;
-  overflow: hidden;
 }
-.slider-product-one-content-btn {
+.footer-column h4::before {
+  content: "";
   position: absolute;
-  top: 60%;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 20px;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
 }
-/*nut*/
-.slider-product-one-content-btn i {
-  color: #020202;
-  font-size: 30px;
-  height: 45px;
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(-50%);
+.footer-column ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-column ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
   transition: all 0.3s ease;
-  cursor: pointer;
-  opacity: 0.5; /*lam mờ*/
 }
-.slider-product-one-content-btn i:hover {
-  opacity: 0.5;
+.footer-column ul li a:hover {
+  color: #fdaf17;
+  padding-left: 8px;
+}
+.footer-column .social-icons a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-column .social-icons a:hover {
+  color: #24262b;
+  background-color: #fdaf17;
 }
 
-/*chuyen slide*/
-.slider-product-one-content-items-content {
-  position: relative;
-  height: 500px;
-  transition: all 0.8s ease;
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-column {
+    width: 50%;
+    margin-bottom: 30px;
+  }
 }
-.slider-product-one-content-items {
-  position: absolute;
+@media (max-width: 574px) {
+  .footer-column {
+    width: 100%;
+  }
 }
-.slider-product-one-content-items:nth-child(2) {
-  transform: translateX(100%);
-}
-.slider-product-one-content-items:nth-child(3) {
-  transform: translateX(200%);
-}
-  </style>
-</head>
-<body>
 
-  <!--Mot so san pham-->
-  <div class="heading heading-effect text-center mb-4">
-    <h2>
-      <span>Mot so san pham</span>
-    </h2> 
-  </div>
-  <!-------------------------Slide Product----------------->
-  <section class="slider-product-one">
-    <div class="container1">
-      <div class="slider-product-one-content">
-        <div class="slider-product-one-content-container">
-          <div class="slider-product-one-content-items-content">
-            <div class="slider-product-one-content-items">
-              <div class="slider-product-one-content-item">
-                <img src="img_index/mua_he_1.jpg" alt="">
-                <div class="slider-product-one-content-text">
-                  <li>Iphone 12 promax 128gb</li>
-                  <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
-                  <li>15.000.000 <sup>d</sup></li>
-                  <li>Qua 400.000 <sup>d</sup></li>
-                  <li>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
-                </div>
-              </div>
-              <div class="slider-product-one-content-item">
-                <img src="img_index/mua_he_1.jpg" alt="">
-                <div class="slider-product-one-content-text">
-                  <li>Iphone 12 promax 128gb</li>
-                  <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
-                  <li>15.000.000 <sup>d</sup></li>
-                  <li>Qua 400.000 <sup>d</sup></li>
-                  <li>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
-                </div>
-              </div>
-              <div class="slider-product-one-content-item">
-                <img src="img_index/mua_he_1.jpg" alt="">
-                <div class="slider-product-one-content-text">
-                  <li>Iphone 12 promax 128gb</li>
-                  <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
-                  <li>15.000.000 <sup>d</sup></li>
-                  <li>Qua 400.000 <sup>d</sup></li>
-                  <li>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
-                </div>
-              </div>
-              <div class="slider-product-one-content-item">
-                <img src="img_index/mua_he_1.jpg" alt="">
-                <div class="slider-product-one-content-text">
-                  <li>Iphone 12 promax 128gb</li>
-                  <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
-                  <li>15.000.000 <sup>d</sup></li>
-                  <li>Qua 400.000 <sup>d</sup></li>
-                  <li>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
-                </div>
-              </div>
-            </div>
-            <div class="slider-product-one-content-items">
-              <div class="slider-product-one-content-item">
-                <img src="img_index/mua_he_1.jpg" alt="">
-                <div class="slider-product-one-content-text">
-                  <li>Iphone 12 promax 128gb</li>
-                  <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
-                  <li>15.000.000 <sup>d</sup></li>
-                  <li>Qua 400.000 <sup>d</sup></li>
-                  <li>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
-                </div>
-              </div>
-              <div class="slider-product-one-content-item">
-                <img src="img_index/mua_he_2.jpg" alt="">
-                <div class="slider-product-one-content-text">
-                  <li>Iphone 12 promax 128gb</li>
-                  <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
-                  <li>15.000.000 <sup>d</sup></li>
-                  <li>Qua 400.000 <sup>d</sup></li>
-                  <li>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
-                </div>
-              </div>
-              <div class="slider-product-one-content-item">
-                <img src="img_index/mua_he_1.jpg" alt="">
-                <div class="slider-product-one-content-text">
-                  <li>Iphone 12 promax 128gb</li>
-                  <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
-                  <li>15.000.000 <sup>d</sup></li>
-                  <li>Qua 400.000 <sup>d</sup></li>
-                  <li>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
-                </div>
-              </div>
-              <div class="slider-product-one-content-item">
-                <img src="img_index/mua_he_1.jpg" alt="">
-                <div class="slider-product-one-content-text">
-                  <li>Iphone 12 promax 128gb</li>
-                  <li>Online gia re</li>
-                  <li><a href="">32.990.000 <sup>d</sup> </a><span> 6%</span></li>
-                  <li>15.000.000 <sup>d</sup></li>
-                  <li>Qua 400.000 <sup>d</sup></li>
-                  <li>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
-                </div>
-              </div>
+    </style>
+  </head>
+  <body>
+    <footer class="footer-section">
+      <div class="wrapper">
+        <div class="flex-row">
+          <div class="footer-column">
+            <h4>LIEN HE HO TRO</h4>
+            <ul class="no-bullets">
+              <li><a href="#">Giới thiệu về WatchStore</a></li>
+              <li><a href="#">Phản ánh - Khiếu nại</a></li>
+              <li><a href="#">Chứng nhận đại lý</a></li>
+              <li><a href="#">Tin tức công ty</a></li>
+              <li><a href="#">Top list đồng hồ</a></li>
+              <li><a href="#">Kiến thức đồng hồ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>CHINH SACH CHUNG</h4>
+            <ul class="no-bullets">
+              <li><a href="#">Điều khoản thanh toán </a></li>
+              <li><a href="#">Chính sách bảo hành</a></li>
+              <li><a href="#">Chính sách bảo mật</a></li>
+              <li><a href="#">Chính sách vận chuyển </a></li>
+              <li><a href="#">Chính sách đổi trả</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>CUA HANG HA NOI & HCM</h4>
+            <ul class="no-bullets">
+              <li>
+                <a href="#"
+                  ><i class="fas fa-map-marker-alt" style="color: orange"></i>
+                  97 Trần Đại Nghĩa, HBT, Hà Nội</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-map-marker-alt" style="color: orange"></i>
+                  58 Trần Đăng Ninh, Cầu Giấy, Hà Nội</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-map-marker-alt" style="color: orange"></i>
+                  90 Lê Văn Sỹ, P11, Phú Nhuận, HCM</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fas fa-map-marker-alt" style="color: orange"></i>
+                  61 Quang Trung, P10, Gò Vấp, HCM</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>LIEN HE CHUNG TOI</h4>
+            <ul class="no-bullets">
+              <li><a href="#">Hotline: 035844654</a></li>
+              <li><a href="#">Hotline: 065648949</a></li>
+              <li><a href="#">Hotline: 025649846</a></li>
+              <li><a href="#">Hotline: 026261999</a></li>
+            </ul>
+            <h4>THEO DOI CHUNG TOI TAI</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
             </div>
           </div>
-          <div class="slider-product-one-content-btn">
-            <i class="fa-solid fa-chevron-left fa-chevron-left-tow"></i>
-            <i class="fa-solid fa-chevron-right fa-chevron-right-tow"></i>
-        </div>
-
-        </div>
-   
-        
         </div>
       </div>
-  
-  </section>
-
-   
-
-</body>
-<script>
-  
-    //hieu ung truot slider 1
-    let index = 0;
-      const rightbtntwo = document.querySelector('.fa-chevron-right-tow');
-      const leftbtntwo = document.querySelector('.fa-chevron-left-tow');
-      const sliderContainer = document.querySelector('.slider-product-one-content-items-content');
-      const imgNubertwo = document.querySelectorAll('.slider-product-one-content-items'); // Get all items
-      const itemsCount = imgNubertwo.length;
-rightbtntwo.addEventListener("click", function() {
-    index = (index + 1) % itemsCount; 
-    updateSliderPosition();
-});
-
-leftbtntwo.addEventListener("click", function() {
-    index = (index - 1 + itemsCount) % itemsCount; 
-    updateSliderPosition();
-});
-
-function updateSliderPosition() {
-    const offset = index * 100; 
-    sliderContainer.style.transform = `translateX(-${offset}%)`; 
-}
-// hieu ung xuat hien anh tinh te lich lam
-
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.body-anh div');
-
-  function checkVisibility() {
-    const windowHeight = window.innerHeight;
-    const scrollTop = window.scrollY;
-
-    elements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top + scrollTop;
-
-      if (scrollTop + windowHeight > elementTop) {
-        element.classList.add('show');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', checkVisibility);
-  checkVisibility(); // Kiểm tra khi tải trang
-});
-</script>
+    </footer>
+  </body>
 </html>

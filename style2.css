@@ -15,7 +15,8 @@ body {
 
 /* Nav styles */
 nav {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(150, 149, 149);
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
@@ -33,7 +34,7 @@ a {
   color: black;
   font-size: 18px;
   padding-bottom: 40px;
-  padding: 10px 10px 40px 10px;
+  padding: 10px 5px 20px 5px;
 }
 
 /* Style for active links or hover effect */
@@ -43,7 +44,7 @@ a {
 }
 
 .tieude:hover {
-  border-bottom: 10px solid red;
+  border-bottom: 3px solid red;
   color: red;
 }
 
@@ -64,13 +65,17 @@ nav ul li.search-container {
 }
 
 nav ul li.search-container input {
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  height: 30px;
+  height: 35px;
   outline: none;
   padding: 5px 10px;
+  width: 150px;
+  transition: width 0.3s;
 }
-
+nav ul li.search-container input:focus {
+  width: 200px;
+}
 nav ul li.search-container i {
   position: absolute;
   top: 50%;
@@ -92,12 +97,13 @@ nav ul li.search-container i {
   display: none;
   position: absolute;
   background-color: #ffffff;
-  min-width: 800px;
-  left: 0;
+  min-width: 840px;
+  left: 50%;
+  transform: translateX(-50%);
   top: 100%;
-  z-index: 1;
-  transform: translateX(-40%);
-  margin-top: 10px;
+  z-index: 1000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
 }
 
 .dropdown-content .row {
@@ -564,7 +570,6 @@ nav ul li.search-container i {
 }
 .footer-column .social-icons a:hover {
   color: #fdaf17;
-  background-color: #fdaf17;
 }
 /*responsive*/
 @media (max-width: 767px) {

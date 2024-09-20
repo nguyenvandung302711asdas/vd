@@ -245,6 +245,18 @@ nav ul li.search-container i {
   margin-top: 20px;
   max-width: 600px;
 }
+.dangnhap button {
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 13px;
+  font-size: 16px;
+  opacity: 0.7; /* Độ mờ (giá trị từ 0 đến 1, 1 là không mờ, 0 là hoàn toàn trong suốt) */
+}
+
+.dangnhap button:hover {
+  opacity: 1; /* Khi hover, độ mờ sẽ về 1 (rõ ràng) */
+  background-color: red; /* Màu nền khi hover */
+}
 
 /**/
 /* Text animation: Slide in from the left */

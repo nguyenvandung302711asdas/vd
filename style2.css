@@ -8,7 +8,7 @@
   line-height: 1.5;
 }
 body {
-  padding: 20px; /* Giảm padding của body để phù hợp với màn hình */
+  
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
 }
@@ -502,6 +502,10 @@ nav ul li.search-container i {
   padding: 8px 17px;
   border-radius: 8px;
   cursor: pointer;
+  
+}
+.view__more3:hover{
+  color: #fdaf17;
 }
 /*footer*/
 .wrapper {
